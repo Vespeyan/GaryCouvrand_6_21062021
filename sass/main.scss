@@ -1,0 +1,145 @@
+@import "./utils/variables";
+
+a {
+    text-decoration: none;
+}
+body {
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    display: flex;
+    width: 70%;
+    height: 200px;
+    margin-top: 5px;
+}
+nav {
+    margin-left: 5em;
+    margin-right: 5em;
+}
+#retour {
+    display:block;
+    width: 190px;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    padding-top: 2px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #DB8876;
+    margin-left: auto;
+    margin-right: auto;
+    visibility: hidden;
+}
+
+
+.logo {
+    width: 12em;
+    margin-left: 1em;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-inline-start: 0px;    
+}
+
+ li {
+    display: inline;
+    color: $couleur-primaire;
+    font-size: 0.9em;
+    font-weight: bolder;
+    border: 1px #C4C4C4 solid;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    border-radius: 1em;
+    margin-right: 5px;
+    margin-top: 5px;
+    
+}
+
+
+main h1 {
+    width: 30%;
+    height: 100px;
+    position: absolute;
+    top: 0.8em;
+    right: 0.2em;
+    color: $couleur-primaire;
+    font-weight: 500;
+    
+}
+
+main {
+    margin-top: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.bloc {
+    width: 400px;
+    text-align: center;
+    margin-bottom: 50px;
+    &__photo {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    &__nom {
+        font-weight: normal;
+        font-size: 2.4em;
+        color: $couleur-secondaire;
+    }
+    &__lieu {
+        margin-top: -25px;
+        color: $couleur-primaire;
+    }
+    &__description {
+        margin-top: -8px;
+        font-size: 0.9em;
+    }
+    &__tarif {
+        margin-top: -8px;
+        font-size: 0.9em;
+        color: #757575;
+    }
+}
+
+@media all and (max-width : 820px) {
+    header {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .logo {
+        width: 9em;
+    }
+    main h1 {
+        font-size: 1em;
+        width: 50%;
+        top: 38px;
+        right: 10px;
+        text-align: end;
+    }
+
+    nav {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-inline-start: 0px;
+    }
+
+}

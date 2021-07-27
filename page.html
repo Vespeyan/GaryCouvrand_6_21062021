@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width"/>
+        <title>Page</title>
+        <link rel="stylesheet" href="sass/page.css">
+        <script type="module" src="page.mjs"></script>
+        <script type="text/javascript" src="lightbox.js"></script>
+        <script type="text/javascript" src="modal.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+                integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+                crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <header>
+            <div id="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Fisheye Home page" class="logo">
+                </a>
+            </div>
+            </a>
+        </header>
+        <main>
+            <div id="bloc">
+                <h1 id="bloc__nom"></h1>
+                <p id="bloc__lieu"></p>
+                <p id="bloc__description"></p>
+                <button type="button" id="contact">
+                    Contactez-moi
+                </button>
+                <div id ="photo container">
+                </div>
+            </div>
+                <div class="tri">
+                    <label for="trier">Trier par</label>
+                    <select name="Order by" class="tri_select">
+                        <option value="popularite">Popularité</option>
+                        <option value="date">Date</option>
+                        <option value="titre">Titre</option>
+                    </select>
+                </div>
+            <div id ="lightbox" >
+                <div id="lightbox-content">
+                    <span class="close" onclick="closeLightbox()">&times;</span>
+                    <a class="precedent" onclick="changeSlide(-1)">&#10094;</a>
+                    <a class="suivant" onclick="changeSlide(1)">&#10095;</a>
+                </div>
+            </div>
+            <form id="modal">
+                <h3 class="modal-title">Contactez-moi</h3>
+                <p class="modal-name">Mimi Keel</p>
+                <button type="button" id="close-modal">
+                    <span>&times;</span>
+                </button>
+                <label>Prénom</label>
+                <input type="text" id="form-firstname">
+                <label>Nom</label>
+                <input type="text" id="form-name">
+                <label>Email</label>
+                <input type="email" id="form-email">
+                <label>Votre message</label>
+                <input type="text" id="form-message">
+                <button type="submit" class="send-form">
+                    Envoyer
+                </button>
+            </div>
+        </main>
+    </body>
