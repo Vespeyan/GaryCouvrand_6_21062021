@@ -49,6 +49,7 @@ fetch("./FishEyeData.json")
             let slide = document.createElement("div");
             slide.setAttribute("class", "slide");
             let slideImage = new Image();
+            let slideVideo = document.createElement("video");
 
 
             if (mediasArtist[k].image != null) {
@@ -61,16 +62,23 @@ fetch("./FishEyeData.json")
                 slideImage.setAttribute("alt", "");
                 slideImage.setAttribute("class", "slide__image");
                 slide.appendChild(slideImage);
-                modalContent.appendChild(slide);
             }
 
             if (mediasArtist[k].video != null) {
                 blocVideo.src = "images/"+urlIndex+"/"+mediasArtist[k].video;
                 blocVideo.setAttribute("alt", "");
                 blocVideo.setAttribute("class", "bloc_media__video");
+                blocVideo.setAttribute("onclick", "openLightbox();toSlide("+(k+1)+")");
                 a.appendChild(blocVideo);
-
+                slideVideo.src = "images/"+urlIndex+"/"+mediasArtist[k].video;
+                slideVideo.controls = true;
+                slideVideo.setAttribute("alt", "");
+                slideVideo.setAttribute("class", "slide__image");
+                slide.appendChild(slideVideo);
             }
+
+            modalContent.appendChild(slide);
+
 
             blocIcone.src = "images/Vector.png";
             blocIcone.setAttribute("alt", "likes");
