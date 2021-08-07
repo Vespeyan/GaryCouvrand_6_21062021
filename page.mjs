@@ -62,6 +62,9 @@ fetch("./FishEyeData.json")
                 slideImage.setAttribute("alt", "");
                 slideImage.setAttribute("class", "slide__image");
                 slide.appendChild(slideImage);
+                let slideTitle = document.createElement("h3");
+                slideTitle.innerHTML = mediasArtist[k].title;
+                slide.appendChild(slideTitle);
             }
 
             if (mediasArtist[k].video != null) {
