@@ -40,10 +40,14 @@ fetch("./FishEyeData.json")
             let blocVideo = document.createElement("video");
             let blocTitre = document.createElement("h2");
             blocTitre.setAttribute("class", "bloc_media__titre");
+            let blocIconeEtCompteur = document.createElement("div");
+            blocIconeEtCompteur.setAttribute("class", "bloc_media__icone_et_compteur");
             let blocIcone = new Image();
+            let blocMediaCompteur = document.createElement("p");
+            blocMediaCompteur.setAttribute("class", "bloc_media__compteur");
             let b = document.createElement("a");
-            a.setAttribute("href", "#");
-            a.setAttribute("class", "bloc_media__lien");
+            b.setAttribute("href", "#");
+            b.setAttribute("class", "bloc_media__like_button");
             let blocTitreEtIcone = document.createElement("div");
             blocTitreEtIcone.setAttribute("class", "bloc_media__titre_et_icone");
             let slide = document.createElement("div");
@@ -78,10 +82,12 @@ fetch("./FishEyeData.json")
                 slideVideo.setAttribute("alt", "");
                 slideVideo.setAttribute("class", "slide__image");
                 slide.appendChild(slideVideo);
+                let slideTitle = document.createElement("h3");
+                slideTitle.innerHTML = mediasArtist[k].title;
+                slide.appendChild(slideTitle);
             }
 
             modalContent.appendChild(slide);
-
 
             blocIcone.src = "images/Vector.png";
             blocIcone.setAttribute("alt", "likes");
@@ -90,9 +96,11 @@ fetch("./FishEyeData.json")
 
             blocMedia.appendChild(a);
             blocMedia.appendChild(blocTitreEtIcone);
-            blocTitreEtIcone.appendChild(blocTitre)
+            blocTitreEtIcone.appendChild(blocTitre);
+            blocIconeEtCompteur.appendChild(blocMediaCompteur);
             b.append(blocIcone);
-            blocTitreEtIcone.appendChild(b);
+            blocIconeEtCompteur.appendChild(b);
+            blocTitreEtIcone.appendChild(blocIconeEtCompteur);
             main.appendChild(blocMedia);
         }
     
@@ -128,5 +136,4 @@ for(let l=0; l<photographes.length;l++) {
 
     }
 }
-
 })

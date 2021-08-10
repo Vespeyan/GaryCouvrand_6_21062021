@@ -10,4 +10,5 @@ export class mediaFactory {
             this.date = date;
             this.price = price;
         }
+        
     }
