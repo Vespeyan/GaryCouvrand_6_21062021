@@ -7,102 +7,45 @@ fetch("./FishEyeData.json")
 })
 
 .then(function fichePhotographes(jsonObj) {
-    const main = document.querySelector("main");
-    const modalContent = document.getElementById("lightbox-content");
-    let medias = jsonObj["media"];
 
+    // On définit la variable urlIndex pour savoir quels médias choisir en fonction de la page chargée
     let url = document.location.href;
     let urlIndex = url.substring(url.lastIndexOf( "?" )+1);
     urlIndex = urlIndex.replace(/[^0-9]/g, '');
+
+    /* On stocke les objets du JSON qui nous intéressent dans la variable medias et on crée
+    le tableau mediasList dans lequel on ne gardera que ceux correspondants à l'urlIndex voulu
+    */ 
+    let medias = jsonObj["media"];
     let mediasList = [];
-    let mediasArtist = [];
-
-
-    
     medias.forEach(function(item) {
         if(item.photographerId == urlIndex) {
             mediasList.push(item);
         }
     });
     
-
+    // On lance la création des objets et du HTML correspondant à travers une boucle qui parcourt le tableau mediasList
     for (let i=0; i<mediasList.length;i++) {
-                mediasArtist.push(new mediaFactory(mediasList[i].id, mediasList[i].photographerId, mediasList[i].title, mediasList[i].image, mediasList[i].video, mediasList[i].tags, mediasList[i].likes, mediasList[i].date, mediasList[i].price)); 
+        new mediaFactory(mediasList[i].id, 
+                         mediasList[i].photographerId, 
+                         mediasList[i].title, 
+                         mediasList[i].image, 
+                         mediasList[i].video, 
+                         mediasList[i].tags, 
+                         mediasList[i].likes, 
+                         mediasList[i].date, 
+                         mediasList[i].price).
+                         mediaHTML();
+        let a = document.getElementsByClassName("bloc_media__lien")[i];
+        a.setAttribute("onclick", "openLightbox();toSlide("+(i+1)+")");
+
     }
 
-        for (let k=0; k<mediasArtist.length;k++) {
-            let blocMedia = document.createElement("div");
-            blocMedia.setAttribute("class", "bloc_media");
-            let a = document.createElement("a");
-            a.setAttribute("href", "#");
-            a.setAttribute("class", "bloc_media__lien");
-            let blocImage = new Image();
-            let blocVideo = document.createElement("video");
-            let blocTitre = document.createElement("h2");
-            blocTitre.setAttribute("class", "bloc_media__titre");
-            let blocIconeEtCompteur = document.createElement("div");
-            blocIconeEtCompteur.setAttribute("class", "bloc_media__icone_et_compteur");
-            let blocIcone = new Image();
-            let blocMediaCompteur = document.createElement("p");
-            blocMediaCompteur.setAttribute("class", "bloc_media__compteur");
-            let b = document.createElement("a");
-            b.setAttribute("href", "#");
-            b.setAttribute("class", "bloc_media__like_button");
-            let blocTitreEtIcone = document.createElement("div");
-            blocTitreEtIcone.setAttribute("class", "bloc_media__titre_et_icone");
-            let slide = document.createElement("div");
-            slide.setAttribute("class", "slide");
-            let slideImage = new Image();
-            let slideVideo = document.createElement("video");
 
 
-            if (mediasArtist[k].image != null) {
-                blocImage.src = "images/"+urlIndex+"/"+mediasArtist[k].image;
-                blocImage.setAttribute("alt", "");
-                blocImage.setAttribute("class", "bloc_media__image");
-                blocImage.setAttribute("onclick", "openLightbox();toSlide("+(k+1)+")");
-                a.appendChild(blocImage);
-                slideImage.src = "images/"+urlIndex+"/"+mediasArtist[k].image;
-                slideImage.setAttribute("alt", "");
-                slideImage.setAttribute("class", "slide__image");
-                slide.appendChild(slideImage);
-                let slideTitle = document.createElement("h3");
-                slideTitle.innerHTML = mediasArtist[k].title;
-                slide.appendChild(slideTitle);
-            }
 
-            if (mediasArtist[k].video != null) {
-                blocVideo.src = "images/"+urlIndex+"/"+mediasArtist[k].video;
-                blocVideo.setAttribute("alt", "");
-                blocVideo.setAttribute("class", "bloc_media__video");
-                blocVideo.setAttribute("onclick", "openLightbox();toSlide("+(k+1)+")");
-                a.appendChild(blocVideo);
-                slideVideo.src = "images/"+urlIndex+"/"+mediasArtist[k].video;
-                slideVideo.controls = true;
-                slideVideo.setAttribute("alt", "");
-                slideVideo.setAttribute("class", "slide__image");
-                slide.appendChild(slideVideo);
-                let slideTitle = document.createElement("h3");
-                slideTitle.innerHTML = mediasArtist[k].title;
-                slide.appendChild(slideTitle);
-            }
 
-            modalContent.appendChild(slide);
 
-            blocIcone.src = "images/Vector.png";
-            blocIcone.setAttribute("alt", "likes");
-            blocIcone.setAttribute("class", "bloc_media__icone");
-            blocTitre.textContent = mediasArtist[k].title;
-
-            blocMedia.appendChild(a);
-            blocMedia.appendChild(blocTitreEtIcone);
-            blocTitreEtIcone.appendChild(blocTitre);
-            blocIconeEtCompteur.appendChild(blocMediaCompteur);
-            b.append(blocIcone);
-            blocIconeEtCompteur.appendChild(b);
-            blocTitreEtIcone.appendChild(blocIconeEtCompteur);
-            main.appendChild(blocMedia);
-        }
     
 
 let photographesData = jsonObj["photographers"];
@@ -117,6 +60,7 @@ for(let l=0; l<photographes.length;l++) {
         document.getElementById("bloc__nom").innerHTML = photographes[l].name;
         document.getElementById("bloc__lieu").innerHTML = photographes[l].city+", "+photographes[l].country;
         document.getElementById("bloc__description").innerHTML = photographes[l].tagline;
+        document.getElementById("prix_jour").innerHTML = photographes[l].price+"€ / jour";
         let blocTags = document.createElement("ul");
 
         let portraitPhotographer = new Image();
