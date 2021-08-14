@@ -42,7 +42,6 @@ fetch("./FishEyeData.json")
         document.getElementsByClassName("bloc_media")[i].setAttribute("data-title", mediasList[i].title);
         document.getElementsByClassName("bloc_media")[i].setAttribute("data-date", mediasList[i].date);
         document.getElementsByClassName("bloc_media")[i].setAttribute("data-likes", parseInt(likesCount.textContent, 10));
-
     }
 
 
@@ -63,6 +62,7 @@ for(let l=0; l<photographes.length;l++) {
         document.getElementById("bloc__lieu").innerHTML = photographes[l].city+", "+photographes[l].country;
         document.getElementById("bloc__description").innerHTML = photographes[l].tagline;
         document.getElementById("prix_jour").innerHTML = photographes[l].price+"€ / jour";
+        document.getElementById("modal-title").innerHTML = "Contactez-moi <br>" + photographes[l].name;
         let blocTags = document.createElement("ul");
 
         let portraitPhotographer = new Image();

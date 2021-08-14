@@ -54,21 +54,20 @@
                     <a class="suivant" onclick="changeSlide(1)">&#10095;</a>
                 </div>
             </div>
-            <form id="modal">
-                <h3 class="modal-title">Contactez-moi</h3>
-                <p class="modal-name">Mimi Keel</p>
-                <button type="button" id="close-modal">
+            <form id="modal" aria-labelledby="modal-title">
+                <h1 id="modal-title"></h1>
+                <button type="button" id="close-modal" aria-label="Close Contact form">
                     <span>&times;</span>
                 </button>
-                <label>Prénom</label>
-                <input type="text" id="form-firstname" name="nom">
-                <label for="nom">Nom</label>
+                <label for="form-firstname">Prénom</label>
+                <input type="text" id="form-firstname">
+                <label for="form-name">Nom</label>
                 <input type="text" id="form-name">
-                <label>Email</label>
+                <label for="form-email">Email</label>
                 <input type="email" id="form-email">
-                <label>Votre message</label>
+                <label for="form-message">Votre message</label>
                 <input type="text" id="form-message">
-                <button type="submit" class="send-form">
+                <button type="submit" class="send-form" aria-label="Send">
                     Envoyer
                 </button>
             </div>
