@@ -64,10 +64,13 @@ export class mediaFactory {
         if (this.image != null) {
             blocImage.src = "images/"+urlIndex+"/"+this.image;
             blocImage.setAttribute("alt", "");
+            blocImage.setAttribute("aria-label", this.title+", closeup view")
             blocImage.setAttribute("class", "bloc_media__image");
             a.appendChild(blocImage);
             slideImage.src = "images/"+urlIndex+"/"+this.image;
+            document.getElementById("lightbox-content").setAttribute("aria-label", "image closeup view")
             slideImage.setAttribute("alt", "");
+            slideImage.setAttribute("aria-label", this.title)
             slideImage.setAttribute("class", "slide__image");
             slide.appendChild(slideImage);
             let slideTitle = document.createElement("h3");
@@ -79,11 +82,14 @@ export class mediaFactory {
         if (this.video != null) {
             blocVideo.src = "images/"+urlIndex+"/"+this.video;
             blocVideo.setAttribute("alt", "");
+            blocVideo.setAttribute("aria-label", this.title+", closeup view")
             blocVideo.setAttribute("class", "bloc_media__video");
             a.appendChild(blocVideo);
             slideVideo.src = "images/"+urlIndex+"/"+this.video;
+            document.getElementById("lightbox-content").setAttribute("aria-label", "image closeup view")
             slideVideo.controls = true;
             slideVideo.setAttribute("alt", "");
+            slideVideo.setAttribute("aria-label", this.title)
             slideVideo.setAttribute("class", "slide__image");
             slide.appendChild(slideVideo);
             let slideTitle = document.createElement("h3");

@@ -37,8 +37,8 @@
                 </div>
             </div>
                 <div class="tri">
-                    <label for="trier">Trier par</label>
-                    <select name="Order by" class="tri_select">
+                    <label for="tri-select">Trier par</label>
+                    <select name="Order by" id="tri_select">
                         <option value="popularite">Popularité</option>
                         <option value="date">Date</option>
                         <option value="titre">Titre</option>
@@ -49,9 +49,9 @@
                 </div>
             <div id ="lightbox" >
                 <div id="lightbox-content">
-                    <span class="close" onclick="closeLightbox()">&times;</span>
-                    <a class="precedent" onclick="changeSlide(-1)">&#10094;</a>
-                    <a class="suivant" onclick="changeSlide(1)">&#10095;</a>
+                    <span class="close" aria-label="Close dialog" onclick="closeLightbox()">&times;</span>
+                    <a class="precedent" aria-label="Previous image" onclick="changeSlide(-1)">&#10094;</a>
+                    <a class="suivant" aria-label="Next image" onclick="changeSlide(1)">&#10095;</a>
                 </div>
             </div>
             <form id="modal" aria-labelledby="modal-title">

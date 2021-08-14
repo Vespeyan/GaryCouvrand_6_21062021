@@ -23,6 +23,7 @@ for (let i = 0; i < photographes.length; i++) {
     let a = document.createElement("a");
     a.setAttribute("href", "page.html?"+photographes[i].id);
     a.setAttribute("class", "bloc__lien");
+    a.setAttribute("aria-label", photographes[i].name);
     let blocNom = document.createElement("h2");
     let blocInformation = document.createElement("div");
     blocInformation.setAttribute("class", "bloc__information");
