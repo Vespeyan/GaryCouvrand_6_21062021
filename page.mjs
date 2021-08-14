@@ -38,10 +38,12 @@ fetch("./FishEyeData.json")
                          mediaHTML();
         let a = document.getElementsByClassName("bloc_media__lien")[i];
         a.setAttribute("onclick", "openLightbox();toSlide("+(i+1)+")");
+        let likesCount = document.getElementsByClassName("bloc_media__compteur")[i];
+        document.getElementsByClassName("bloc_media")[i].setAttribute("data-title", mediasList[i].title);
+        document.getElementsByClassName("bloc_media")[i].setAttribute("data-date", mediasList[i].date);
+        document.getElementsByClassName("bloc_media")[i].setAttribute("data-likes", parseInt(likesCount.textContent, 10));
 
     }
-
-
 
 
 

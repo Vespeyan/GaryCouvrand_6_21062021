@@ -21,6 +21,7 @@ export class mediaFactory {
         // On crée de nouveaux éléments HTML en les attribuant à des variables pour les réutiliser plus tard
         const main = document.querySelector("main");
         const modalContent = document.getElementById("lightbox-content");
+        const blocMedias = document.getElementById("blocs");
         let blocMedia = document.createElement("div");
         let a = document.createElement("a");
         let blocImage = new Image();
@@ -55,6 +56,7 @@ export class mediaFactory {
         function addLike() {
             blocMediaCompteur.textContent++;
             document.getElementById("likes").textContent++;
+            blocMedia.setAttribute("data-likes", parseInt(blocMediaCompteur.textContent, 10));
         }
         
 
@@ -99,6 +101,6 @@ export class mediaFactory {
         b.append(blocIcone);
         blocIconeEtCompteur.appendChild(b);
         blocTitreEtIcone.appendChild(blocIconeEtCompteur);
-        main.appendChild(blocMedia);
+        blocMedias.appendChild(blocMedia);
     }
 }
