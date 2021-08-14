@@ -33,3 +33,12 @@ function showSlide(n) {
             
   slides[slideIndex-1].style.display = 'block';
 };
+
+document.addEventListener("keydown", function(e) {
+  if(e.key === "ArrowLeft") {
+    changeSlide(-1);
+  }
+  else if(e.key === "ArrowRight") {
+    changeSlide(1);
+  }
+});
