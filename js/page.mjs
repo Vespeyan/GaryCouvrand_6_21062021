@@ -91,4 +91,14 @@ fetch("./FishEyeData.json")
     const openButton = document.getElementById("contact");
     openButton.addEventListener("click", modal);
 
+    // Ecoute d'événement et fonction pour le bouton de retour au début de page
+    window.addEventListener("scroll", retour);
+    function retour() {
+        if (window.scrollY !== 0) {
+            document.getElementById("retour").style.visibility = "visible";
+        }
+        else if (window.scrollY == 0) {
+            document.getElementById("retour").style.visibility = "hidden";
+        }
+    }
 })
