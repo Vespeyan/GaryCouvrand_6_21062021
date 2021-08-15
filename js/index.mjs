@@ -1,12 +1,16 @@
+// On importe la class PhotographeFactory
 import {photographeFactory} from "./photographeFactory.mjs";
 
+// On récupère le fichier JSON
 fetch("./FishEyeData.json")
 .then(response => {
     return response.json();
 })
 
+// On définit une fonction nous permettant de traiter le fichier JSON
 .then(function fichePhotographes(jsonObj) {
 
+// On stocke les objets du JSON qui nous intéressent dans le tableau photographes en utilisant la classe photographeFactory
 let photographesData = jsonObj["photographers"];
 let photographes = [];
 
@@ -15,6 +19,11 @@ for (let j=0; j<photographesData.length;j++) {
 }
 
 const main = document.querySelector("main");
+
+/* On crée une boucle dans laquelle on va définir des éléments du DOM, en créer d'autres,
+ainsi qu'utiliser les différentes informations du JSON pour remplir de façon dynamique
+différents éléments. Ici la factory n'a aucun réel intérêt, elle est utilisée de façon plus intéressante
+pour les médias du fichier page.html après que j'aie mieux compris le concept et l'intérêt des factories */
 
 for (let i = 0; i < photographes.length; i++) {
     let bloc = document.createElement("div");
@@ -64,26 +73,25 @@ for (let i = 0; i < photographes.length; i++) {
 
     
     let filtresArray = document.getElementsByClassName("filtre");
-
+    // Cette boucle sert à n'afficher que les fiches d'artistes contenant le tag sur lequel on a cliqué
     for (let k = 0; k < filtresArray.length; k++) {
         let tagname = filtresArray[k].innerHTML;
         let tagnameBrut = tagname.substring(tagname.lastIndexOf("#")+1);
         filtresArray[k].addEventListener("click", filtre);
-
         let filtresResetBoutton = document.getElementById("reset-boutton");
         filtresResetBoutton.addEventListener("click", resetFunction);
 
-        function resetFunction() {
-            bloc.style.display = "block";
+        function filtre() {
+            if (!bloc.dataset.tags.includes(tagnameBrut.toLowerCase())) {
+                bloc.style.display = "none";
+            } 
+            else if (bloc.dataset.tags.includes(tagnameBrut.toLowerCase())) {
+                bloc.style.display = "block";
+            }
         }
 
-
-        function filtre() {
-            if(!bloc.dataset.tags.includes(tagnameBrut.toLowerCase())) {
-           bloc.style.display = "none";
-        } else if(bloc.dataset.tags.includes(tagnameBrut.toLowerCase())) {
+        function resetFunction() {
             bloc.style.display = "block";
-         }
         }
     }
 
