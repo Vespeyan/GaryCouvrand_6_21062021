@@ -1,5 +1,6 @@
 a {
   text-decoration: none;
+  color: black;
 }
 
 body {
@@ -20,7 +21,7 @@ header {
   display: flex;
   width: 70%;
   height: 200px;
-  margin-top: 5px;
+  margin-top: 40px;
 }
 
 nav {
@@ -29,6 +30,11 @@ nav {
 }
 
 #retour {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   display: block;
   width: 190px;
   height: 25px;
@@ -38,9 +44,7 @@ nav {
   font-weight: bold;
   text-align: center;
   background-color: #DB8876;
-  margin-left: auto;
-  margin-right: auto;
-  visibility: hidden;
+  visibility: visible;
 }
 
 .logo {
@@ -61,8 +65,8 @@ ul {
           padding-inline-start: 0px;
 }
 
-li {
-  display: inline;
+.filtre {
+  display: inline-block;
   color: #901C1C;
   font-size: 0.9em;
   font-weight: bolder;

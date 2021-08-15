@@ -15,7 +15,7 @@ body {
 }
 
 header {
-  margin-top: 20px;
+  margin-top: 40px;
   width: 100%;
 }
 
@@ -31,7 +31,9 @@ h1 {
 }
 
 a {
+  text-decoration: none;
   width: 100%;
+  color: black;
 }
 
 main {
@@ -44,6 +46,24 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+#retour {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: block;
+  width: 190px;
+  height: 25px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  padding-top: 2px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #DB8876;
+  visibility: hidden;
 }
 
 #bloc {
@@ -399,6 +419,7 @@ label {
     font-size: 12px;
     padding-left: 0;
     padding-right: 0;
+    height: 150px;
   }
   #bloc__photo {
     width: 110px;

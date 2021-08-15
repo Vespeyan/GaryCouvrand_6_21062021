@@ -56,7 +56,8 @@ for (let i = 0; i < photographes.length; i++) {
 
     let tags = photographes[i].tags;
     for (let k = 0; k < tags.length; k++) {
-        let listeTags = document.createElement("li");
+        let listeTags = document.createElement("span");
+        listeTags.setAttribute("class", "filtre");
         listeTags.textContent = "#"+tags[k];
         blocTags.appendChild(listeTags);
     }
@@ -94,12 +95,17 @@ for (let i = 0; i < photographes.length; i++) {
             bloc.style.display = "block";
         }
     }
-
-
-
     
-
-
+    // Ecoute d'événement et fonction pour le bouton de retour au début de page
+    window.addEventListener("scroll", retour);
+    function retour() {
+        if (window.scrollY !== 0) {
+            document.getElementById("retour").style.visibility = "visible";
+        }
+        else if (window.scrollY == 0) {
+            document.getElementById("retour").style.visibility = "visible";
+        }
+    }
 }
 })
 
