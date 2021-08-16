@@ -39,7 +39,7 @@ for (let i = 0; i < photographes.length; i++) {
     let blocLieu = document.createElement("p");
     let blocDescription = document.createElement("p");
     let blocTarif = document.createElement("p");
-    let blocTags = document.createElement("ul");
+    let blocTags = document.createElement("div");
     let blocImage = new Image();
     
     blocImage.src = "images/Photographers ID Photos/"+photographes[i].portrait;
@@ -76,11 +76,10 @@ for (let i = 0; i < photographes.length; i++) {
     let filtresArray = document.getElementsByClassName("filtre");
     // Cette boucle sert à n'afficher que les fiches d'artistes contenant le tag sur lequel on a cliqué
     for (let k = 0; k < filtresArray.length; k++) {
-        let tagname = filtresArray[k].innerHTML;
-        let tagnameBrut = tagname.substring(tagname.lastIndexOf("#")+1);
+
         filtresArray[k].addEventListener("click", filtre);
         let filtresResetBoutton = document.getElementById("reset-boutton");
-        filtresResetBoutton.addEventListener("click", resetFunction);
+        filtresResetBoutton.addEventListener("click", resetFiltre);
 
         function filtre() {
             if (!bloc.dataset.tags.includes(tagnameBrut.toLowerCase())) {
@@ -91,11 +90,11 @@ for (let i = 0; i < photographes.length; i++) {
             }
         }
 
-        function resetFunction() {
+        function resetFiltre() {
             bloc.style.display = "block";
         }
     }
-    
+
     // Ecoute d'événement et fonction pour le bouton de retour au début de page
     window.addEventListener("scroll", retour);
     function retour() {
@@ -103,7 +102,7 @@ for (let i = 0; i < photographes.length; i++) {
             document.getElementById("retour").style.visibility = "visible";
         }
         else if (window.scrollY == 0) {
-            document.getElementById("retour").style.visibility = "visible";
+            document.getElementById("retour").style.visibility = "hidden";
         }
     }
 }

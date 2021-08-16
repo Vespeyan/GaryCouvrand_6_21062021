@@ -72,7 +72,7 @@ fetch("./FishEyeData.json")
             portraitPhotographer.setAttribute("alt", "");
             portraitPhotographer.setAttribute("id", "bloc__photo");
 
-            document.getElementById("photo container").appendChild(portraitPhotographer);
+            document.getElementById("photo_container").appendChild(portraitPhotographer);
 
             let tags = photographes[l].tags;
             for (let m = 0; m < tags.length; m++) {
