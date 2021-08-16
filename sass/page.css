@@ -476,7 +476,7 @@ label {
        object-position: center 20%;
   }
   #modal {
-    position: fixed;
+    position: absolute;
     font-size: 0.9em;
     left: auto;
     right: auto;
