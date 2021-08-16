@@ -65,7 +65,8 @@ fetch("./FishEyeData.json")
             document.getElementById("bloc__description").innerHTML = photographes[l].tagline;
             document.getElementById("prix_jour").innerHTML = photographes[l].price+"€ / jour";
             document.getElementById("modal-title").innerHTML = "Contactez-moi <br>" + photographes[l].name;
-            let blocTags = document.createElement("ul");
+            let blocTags = document.createElement("div");
+            blocTags.setAttribute("class", "bloc_tags");
 
             let portraitPhotographer = new Image();
             portraitPhotographer.src = "images/Photographers ID Photos/"+photographes[l].portrait;
@@ -76,8 +77,9 @@ fetch("./FishEyeData.json")
 
             let tags = photographes[l].tags;
             for (let m = 0; m < tags.length; m++) {
-                let listeTags = document.createElement("li");
+                let listeTags = document.createElement("span");
                 listeTags.textContent = "#"+tags[m];
+                listeTags.setAttribute("class", "tag");
                 document.getElementById("bloc").appendChild(blocTags);
                 blocTags.appendChild(listeTags);
             }
@@ -101,4 +103,8 @@ fetch("./FishEyeData.json")
             document.getElementById("retour").style.visibility = "hidden";
         }
     }
-})
+
+    
+    
+
+    })
