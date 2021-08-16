@@ -26,7 +26,7 @@ différents éléments. Ici la factory n'a aucun réel intérêt, elle est utili
 pour les médias du fichier page.html après que j'aie mieux compris le concept et l'intérêt des factories */
 
 for (let i = 0; i < photographes.length; i++) {
-    let bloc = document.createElement("div");
+    let bloc = document.createElement("article");
     bloc.setAttribute("class", "bloc");
     bloc.setAttribute("data-tags", photographes[i].tags);
     let a = document.createElement("a");
@@ -98,7 +98,7 @@ for (let i = 0; i < photographes.length; i++) {
         [...blocFiltre].forEach((element) => {
             element.style.display = "block";
         }
-    )};
+        )};
 
     // Ecoute d'événement et fonction pour le bouton de retour au début de page
     window.addEventListener("scroll", retour);

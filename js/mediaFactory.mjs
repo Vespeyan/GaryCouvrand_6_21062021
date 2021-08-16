@@ -22,7 +22,7 @@ export class mediaFactory {
         const main = document.querySelector("main");
         const modalContent = document.getElementById("lightbox-content");
         const blocMedias = document.getElementById("blocs");
-        let blocMedia = document.createElement("div");
+        let blocMedia = document.createElement("article");
         let a = document.createElement("a");
         let blocImage = new Image();
         let blocVideo = document.createElement("video");

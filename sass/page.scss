@@ -364,7 +364,10 @@ label {
             margin-top: -90px;
         }
         &__nom {
-            width: 80%;
+            width: 60%;
+        }
+        &__description {
+            width: 60%;
         }
     }
     
@@ -375,7 +378,7 @@ label {
     #contact {
         position: fixed;
         top: auto;
-        bottom: 25px;
+        bottom: 15px;
         margin-right: auto;
         margin-left: auto;
         left: 0;
