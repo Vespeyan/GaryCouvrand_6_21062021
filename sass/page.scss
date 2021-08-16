@@ -26,6 +26,7 @@ h1 {
     color: $couleur-secondaire;
 }
 a {
+    cursor: pointer;
     text-decoration: none;
     width: 100%;
     color: black;
@@ -84,16 +85,17 @@ main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    width: 100%;
 }
-ul {
+.bloc_tags {
     display: flex;
     flex-wrap: wrap;
     padding-inline-start: 0px;  
     margin-block-start: -2em;  
 }
 
- li {
+.tag {
+    cursor: pointer;
     display: inline;
     color: $couleur-primaire;
     font-size: 0.9em;
@@ -109,6 +111,7 @@ ul {
     
 }
 #contact {
+    cursor: pointer;
     position: absolute;
     left: 38em;
     top: 10.5em;
@@ -126,6 +129,7 @@ ul {
 }
 
 #tri_select {
+    cursor: pointer;
     background-color: $couleur-primaire;
     color: white;
     margin-left: 15px;
@@ -140,6 +144,7 @@ ul {
     flex-wrap: wrap;
     width: 350px;
     margin-bottom: 36px;
+    margin-right: 50px;
 }
 .bloc_media__image {
     width: 100%;
@@ -355,7 +360,7 @@ label {
         }
     }
     
-    ul {
+    .bloc_tags {
         margin-block-start: -2em;  
         width: 75%;
     }
@@ -373,6 +378,7 @@ label {
     .bloc_media {
         width: 335px;
         font-size: 14px;
+        margin-right: 0;
     }
     .bloc_media__image {
         height: 190px;
@@ -411,6 +417,7 @@ label {
     }
     .slide {
         width: 75vw;
+        margin-top: -40%;
     }
     #lightbox-content {
         margin-top: 70%;

@@ -3,6 +3,7 @@
 a {
     text-decoration: none;
     color: black;
+    cursor: pointer;
 }
 body {
     font-family: 'DM Sans', sans-serif;
@@ -15,6 +16,7 @@ header {
     width: 70%;
     height: 200px;
     margin-top: 40px;
+    margin-left: 80px;
 }
 nav {
     margin-left: 3.5em;
@@ -124,6 +126,7 @@ main {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
+        margin-left: 0;
     }
     
     .logo {

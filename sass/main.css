@@ -1,6 +1,7 @@
 a {
   text-decoration: none;
   color: black;
+  cursor: pointer;
 }
 
 body {
@@ -22,6 +23,7 @@ header {
   width: 70%;
   height: 200px;
   margin-top: 40px;
+  margin-left: 80px;
 }
 
 nav {
@@ -152,6 +154,7 @@ main {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    margin-left: 0;
   }
   .logo {
     width: 9em;

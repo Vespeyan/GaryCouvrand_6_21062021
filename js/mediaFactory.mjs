@@ -38,6 +38,7 @@ export class mediaFactory {
 
         // On attribue les différents attributs et valeurs dont on a besoin aux éléments précédément créés
         blocMedia.setAttribute("class", "bloc_media");
+        blocMedia.setAttribute("data-tag", this.tags);
         a.setAttribute("href", "#");
         a.setAttribute("class", "bloc_media__lien");
         blocTitre.setAttribute("class", "bloc_media__titre");

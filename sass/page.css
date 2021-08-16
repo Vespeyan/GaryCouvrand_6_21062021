@@ -31,6 +31,7 @@ h1 {
 }
 
 a {
+  cursor: pointer;
   text-decoration: none;
   width: 100%;
   color: black;
@@ -112,12 +113,10 @@ main {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  width: 100%;
 }
 
-ul {
+.bloc_tags {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -129,7 +128,8 @@ ul {
           margin-block-start: -2em;
 }
 
-li {
+.tag {
+  cursor: pointer;
   display: inline;
   color: #901C1C;
   font-size: 0.9em;
@@ -145,6 +145,7 @@ li {
 }
 
 #contact {
+  cursor: pointer;
   position: absolute;
   left: 38em;
   top: 10.5em;
@@ -163,6 +164,7 @@ li {
 }
 
 #tri_select {
+  cursor: pointer;
   background-color: #901C1C;
   color: white;
   margin-left: 15px;
@@ -181,6 +183,7 @@ li {
       flex-wrap: wrap;
   width: 350px;
   margin-bottom: 36px;
+  margin-right: 50px;
 }
 
 .bloc_media__image {
@@ -429,7 +432,7 @@ label {
   #bloc__nom {
     width: 80%;
   }
-  ul {
+  .bloc_tags {
     -webkit-margin-before: -2em;
             margin-block-start: -2em;
     width: 75%;
@@ -448,6 +451,7 @@ label {
   .bloc_media {
     width: 335px;
     font-size: 14px;
+    margin-right: 0;
   }
   .bloc_media__image {
     height: 190px;
@@ -488,6 +492,7 @@ label {
   }
   .slide {
     width: 75vw;
+    margin-top: -40%;
   }
   #lightbox-content {
     margin-top: 70%;
