@@ -111,6 +111,10 @@ main {
   margin-bottom: 50px;
 }
 
+.bloc__lien {
+  display: block;
+}
+
 .bloc__photo {
   width: 250px;
   height: 250px;

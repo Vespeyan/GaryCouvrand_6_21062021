@@ -73,27 +73,32 @@ for (let i = 0; i < photographes.length; i++) {
     main.appendChild(bloc);
 
     
-    let filtresArray = document.getElementsByClassName("filtre");
     // Cette boucle sert à n'afficher que les fiches d'artistes contenant le tag sur lequel on a cliqué
-    for (let k = 0; k < filtresArray.length; k++) {
+    let filtresArray = document.getElementsByClassName("filtre");
+    let blocFiltre = document.getElementsByClassName("bloc");
+    let resetButton = document.getElementById("reset-boutton");
 
-        filtresArray[k].addEventListener("click", filtre);
-        let filtresResetBoutton = document.getElementById("reset-boutton");
-        filtresResetBoutton.addEventListener("click", resetFiltre);
-
-        function filtre() {
-            if (!bloc.dataset.tags.includes(tagnameBrut.toLowerCase())) {
-                bloc.style.display = "none";
-            } 
-            else if (bloc.dataset.tags.includes(tagnameBrut.toLowerCase())) {
-                bloc.style.display = "block";
-            }
-        }
-
-        function resetFiltre() {
-            bloc.style.display = "block";
-        }
+    for (let i=0; i<filtresArray.length; i++) {
+        filtresArray[i].addEventListener("click", function() {
+            let tagname = filtresArray[i].innerText.replace(/[^a-zA-Z]+/g, '');
+            [...blocFiltre].forEach((element) => {
+                if(!element.dataset.tags.includes(tagname.toLowerCase())) {
+                    element.style.display = "none";
+                }
+                else if (element.dataset.tags.includes(tagname.toLowerCase())) {
+                    element.style.display = "block";
+                }
+            })
+        })
     }
+    
+    // Ecoute d'événement et fonction pour faire un reset des filtres
+    resetButton.addEventListener("click", reset);
+    function reset() {
+        [...blocFiltre].forEach((element) => {
+            element.style.display = "block";
+        }
+    )};
 
     // Ecoute d'événement et fonction pour le bouton de retour au début de page
     window.addEventListener("scroll", retour);

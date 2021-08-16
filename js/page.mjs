@@ -104,7 +104,22 @@ fetch("./FishEyeData.json")
         }
     }
 
+    /* Boucle servant à ajouter un écouteur d'événement sur chaque bouton de filtre
+    ainsi qu'une fonction qui va opérer ce filtrage */
+    let filtresArray = document.getElementsByClassName("tag");
+    let blocMediaFiltre = document.getElementsByClassName("bloc_media");
+    for (let k = 0; k < filtresArray.length; k++) {
+        filtresArray[k].addEventListener("click", function() {
+            let tagname = filtresArray[k].innerText.replace(/[^a-zA-Z]+/g, '');
+            [...blocMediaFiltre].forEach((element) => {
+                if(!element.dataset.tag.includes(tagname.toLowerCase())) {
+                    element.style.display = "none";
+                }
+                else if (element.dataset.tag.includes(tagname.toLowerCase())) {
+                    element.style.display = "block";
+                }
+            })
+        })
+    }
     
-    
-
-    })
+})
