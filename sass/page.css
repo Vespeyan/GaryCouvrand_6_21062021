@@ -212,6 +212,13 @@ h2 {
   width: 100%;
 }
 
+.bloc_media__titre {
+  width: 88%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .bloc_media__compteur {
   display: inline;
   font-size: 22px;
