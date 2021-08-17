@@ -122,4 +122,15 @@ fetch("./FishEyeData.json")
         })
     }
     
+    /* Fonction permettant de récupérer tous les likes présents sur la page pour en faire la somme
+    et ajouter le résultat au compteur du total des likes */
+    let totalLikes = document.getElementById("likes");
+    let blocMediaLikes = document.getElementsByClassName("bloc_media");
+    let blocMediaArray = [];
+
+    for(let y=0; y<blocMediaLikes.length; y++) {
+        blocMediaArray.push(parseInt(blocMediaLikes[y].dataset.likes))
+    }
+    totalLikes.innerText = blocMediaArray.reduce((a, b)=> a + b,0);
+
 })

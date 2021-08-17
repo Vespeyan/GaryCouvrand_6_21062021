@@ -52,7 +52,7 @@ export class mediaFactory {
         blocIcone.setAttribute("alt", "likes");
         blocIcone.setAttribute("class", "bloc_media__icone");
         blocTitre.textContent = this.title;
-        blocMediaCompteur.textContent = 0;
+        blocMediaCompteur.textContent = this.likes;
 
         function addLike() {
             blocMediaCompteur.textContent++;
