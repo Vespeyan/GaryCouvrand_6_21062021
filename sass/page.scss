@@ -108,7 +108,14 @@ main {
     border-radius: 1em;
     margin-right: 5px;
     margin-top: 5px;
-    
+}
+.tag:hover {
+    background-color: $couleur-primaire;
+    color: white;
+}
+.tag:focus {
+    background-color: $couleur-primaire;
+    color: white;
 }
 #contact {
     cursor: pointer;
@@ -123,6 +130,10 @@ main {
     width: 8em;
 }
 #contact:hover {
+    background-color: #DB8876;
+    color: black;
+}
+#contact:focus {
     background-color: #DB8876;
     color: black;
 }

@@ -80,6 +80,17 @@ ul {
   border-radius: 1em;
   margin-right: 5px;
   margin-top: 5px;
+  cursor: pointer;
+}
+
+.filtre:hover {
+  background-color: #901C1C;
+  color: white;
+}
+
+.filtre:focus {
+  background-color: #901C1C;
+  color: white;
 }
 
 main h1 {
