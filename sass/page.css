@@ -157,6 +157,11 @@ main {
   width: 8em;
 }
 
+#contact:hover {
+  background-color: #DB8876;
+  color: black;
+}
+
 .tri {
   width: 100%;
   margin-bottom: 50px;
